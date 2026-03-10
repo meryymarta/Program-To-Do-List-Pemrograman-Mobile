@@ -4,7 +4,8 @@ void main(){
   print("--- Program To-Do List ---"); 
   List<String> daftarTugas = [];
 
-  bool (isRunning) {
+  bool isRunning = true;
+  while (isRunning) {
     print("\nMenu:");
     print("1. Tambah Tugas Baru");
     print("2. Lihat Daftar Tugas");
@@ -25,21 +26,25 @@ void main(){
           print("nama tugasnya jangan dikosongin ya!");
         }
         break;
-        
+
       case '2':
-      print("Fitur lihat daftar tugas sedang dibuat...");
-      break;
-      case 3:
-      print("Terimaksih sudah menggunakan program To-Do List! Jangan lupa diselesaikan tugasnya ^^");
-      isRunning = false;
-      break;
+        if (daftarTugas.isEmpty) {
+          print("Daftar tugasmu masih kosong nih. Yuk tambah dulu!");
+        } else {
+          print("\n--- Daftar Tugasmu ---");
+          for (int i = 0; i < daftarTugas.length; i++) {
+            print("${i + 1}. ${daftarTugas[i]}");
+          }
+        }
+        break;
+
+      case '3':
+        print("Terima kasih sudah menggunakan program To-Do List! Jangan lupa diselesaikan tugasnya ^^");
+        isRunning = false;
+        break;
+
       default:
-      print("Pilihan kamu engga valid nih. Silakan coba lagi.");
-
-
+        print("Pilihan kamu engga valid nih. Silakan coba lagi.");
     }
-
-  }
-
-  
+  } 
 }
