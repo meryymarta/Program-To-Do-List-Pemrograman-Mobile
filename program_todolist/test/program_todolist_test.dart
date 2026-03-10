@@ -1,0 +1,8 @@
+import 'package:program_todolist/program_todolist.dart';
+import 'package:test/test.dart';
+
+void main() {
+  test('calculate', () {
+    expect(calculate(), 42);
+  });
+}
