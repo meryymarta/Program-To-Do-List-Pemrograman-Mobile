@@ -15,9 +15,18 @@ void main(){
 
     switch (pilihan) {
       case '1':
-      print("Fitur tambah tugas sedang dibuat...");
-      break;
-      case 2:
+        stdout.write("Tugas apa yang mau ditambah? ");
+        String? tugasBaru = stdin.readLineSync();
+        
+        if (tugasBaru != null && tugasBaru.trim().isNotEmpty) {
+          daftarTugas.add(tugasBaru);
+          print("Yeay! Tugas '$tugasBaru' berhasil ditambah.");
+        } else {
+          print("nama tugasnya jangan dikosongin ya!");
+        }
+        break;
+        
+      case '2':
       print("Fitur lihat daftar tugas sedang dibuat...");
       break;
       case 3:
